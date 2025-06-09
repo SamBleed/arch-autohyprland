@@ -1,0 +1,9 @@
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 14px;
+  color: white;
+}
+
+window {
+  background-color: rgba(0, 0, 0, 0.6);
+}

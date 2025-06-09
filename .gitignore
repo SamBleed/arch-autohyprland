@@ -1,0 +1,9 @@
+echo ".DS_Store
+*.log
+*.cache
+*.bak
+*.zip
+*.tar
+*.tar.gz
+*.iso
+" > .gitignore

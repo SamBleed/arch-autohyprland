@@ -1,0 +1,10 @@
+# ~/.config/starship.toml
+
+format = "$directory$character"
+
+[directory]
+style = "cyan"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
