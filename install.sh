@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🔧 Instalando entorno Hyprland personalizado..."
+echo "🌟 Instalando entorno Hyprland personalizado..."
 
 # Verificar que sea Arch Linux
 if ! grep -qi "arch" /etc/os-release; then
@@ -14,38 +14,34 @@ sudo pacman -Syu --noconfirm hyprland \
     xdg-desktop-portal-hyprland xdg-desktop-portal-wlr \
     kitty waybar wofi grim slurp dunst \
     swaybg wl-clipboard polkit-gnome \
-    qt5-wayland qt6-wayland fish starship git
+    qt5-wayland qt6-wayland fish starship
 
-# Instalar hyprpaper desde AUR si paru está disponible
+# Instalar hyprpaper si se dispone de paru
 if command -v paru &> /dev/null; then
     paru -S --noconfirm hyprpaper
-else
-    echo "ℹ️ Paru no encontrado. Puedes instalar hyprpaper manualmente desde el AUR."
 fi
 
-# Copiar configuraciones personalizadas
-echo "📁 Configurando entorno..."
-mkdir -p ~/.config/{hypr,waybar,hyprpaper,fish}
-
-cp configs/hyprland.conf ~/.config/hypr/
-cp configs/waybar_config ~/.config/waybar/config
-cp configs/waybar_style.css ~/.config/waybar/style.css
-cp configs/hyprpaper.conf ~/.config/hyprpaper/
-cp configs/fish_config.fish ~/.config/fish/config.fish
-cp configs/starship.toml ~/.config/
+# Configurar Hyprland
+echo "🛠️ Configurando Hyprland..."
+mkdir -p ~/.config
+cp -r configs/* ~/.config/
 
 # Fondo de pantalla
+echo "🖼️ Configurando fondo de pantalla..."
 mkdir -p ~/Pictures/wallpapers
-cp assets/default.jpg ~/Pictures/wallpapers/
+cp -r wallpapers/* ~/Pictures/wallpapers/
 
-# Establecer Fish y Starship
-echo "🐟 Configurando Fish Shell..."
+# Configurar Fish Shell + Starship
+echo "🐟 Configurando Fish Shell y Starship..."
+mkdir -p ~/.config/fish
 echo 'set -g theme_nerd_fonts yes' >> ~/.config/fish/config.fish
 echo 'starship init fish | source' >> ~/.config/fish/config.fish
 echo 'set -U fish_greeting ""' >> ~/.config/fish/config.fish
 
-# Cambiar shell predeterminado a Fish
+cp configs/starship.toml ~/.config/
+
+# Cambiar la shell por defecto
 chsh -s /bin/fish
 
-# Finalización
 echo "✅ Instalación completa. Reinicia sesión y selecciona Hyprland en LightDM o ejecuta 'Hyprland' desde TTY."
+
