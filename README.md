@@ -24,6 +24,16 @@ Script de instalación automatizada para Arch Linux con el entorno gráfico **Hy
 
 ---
 
+## ⚠️ Nota importante
+
+Este script está diseñado para ejecutarse **después de una instalación base de Arch Linux**.
+
+Para una instalación rápida y automatizada del sistema base (particiones, usuario, red, etc.), se recomienda utilizar primero el repositorio de [KrakenEU/Arch-AutoBspwm](https://github.com/KrakenEU/Arch-AutoBspwm), el cual proporciona una base mínima funcional.
+
+Una vez completado ese proceso y reiniciado el sistema, puedes clonar este repositorio y ejecutar `install.sh` para transformar el entorno en un sistema moderno con **Hyprland** preconfigurado y listo para usarse.
+
+---
+
 ## 🛠️ Instalación
 
 1. Clona el repositorio:
@@ -44,18 +54,6 @@ Script de instalación automatizada para Arch Linux con el entorno gráfico **Hy
 
 ---
 
-## 🔄 Postinstalación (opcional)
-
-Después de reiniciar, puedes ejecutar este script para configurar detalles finales:
-
-```bash
-./scripts/postinstall.sh
-```
-
-Este script crea carpetas de usuario comunes y lanza `hyprpaper` si está instalado para aplicar el fondo de pantalla automáticamente.
-
----
-
 ## 🗂️ Estructura del proyecto
 
 ```
@@ -64,7 +62,7 @@ Este script crea carpetas de usuario comunes y lanza `hyprpaper` si está instal
 ├── README.md               # Este archivo
 ├── assets/                 # Fondos y archivos visuales
 ├── configs/                # Configs individuales (Fish, Hyprland, Waybar, etc.)
-├── scripts/                # Scripts adicionales post-instalación (postinstall.sh)
+├── scripts/                # Scripts adicionales post-instalación (próximamente)
 └── wallpapers/             # Imágenes adicionales (si se agregan)
 ```
 
