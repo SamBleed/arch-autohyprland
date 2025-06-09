@@ -1,5 +1,3 @@
-
-````markdown
 # 🚀 Arch-AutoHyprland
 
 Script de instalación automatizada para Arch Linux con el entorno gráfico **Hyprland**, orientado a máquinas físicas o virtuales. Basado en el trabajo de [KrakenEU/Arch-AutoBspwm](https://github.com/KrakenEU/Arch-AutoBspwm), este fork adapta el flujo para un entorno **Wayland moderno, rápido y ligero**.
@@ -33,7 +31,7 @@ Script de instalación automatizada para Arch Linux con el entorno gráfico **Hy
    ```bash
    git clone https://github.com/SamBleed/arch-autohyprland.git
    cd arch-autohyprland
-````
+   ```
 
 2. Haz ejecutable el instalador y ejecútalo:
 
@@ -46,6 +44,18 @@ Script de instalación automatizada para Arch Linux con el entorno gráfico **Hy
 
 ---
 
+## 🔄 Postinstalación (opcional)
+
+Después de reiniciar, puedes ejecutar este script para configurar detalles finales:
+
+```bash
+./scripts/postinstall.sh
+```
+
+Este script crea carpetas de usuario comunes y lanza `hyprpaper` si está instalado para aplicar el fondo de pantalla automáticamente.
+
+---
+
 ## 🗂️ Estructura del proyecto
 
 ```
@@ -54,7 +64,7 @@ Script de instalación automatizada para Arch Linux con el entorno gráfico **Hy
 ├── README.md               # Este archivo
 ├── assets/                 # Fondos y archivos visuales
 ├── configs/                # Configs individuales (Fish, Hyprland, Waybar, etc.)
-├── scripts/                # Scripts adicionales post-instalación (próximamente)
+├── scripts/                # Scripts adicionales post-instalación (postinstall.sh)
 └── wallpapers/             # Imágenes adicionales (si se agregan)
 ```
 
@@ -68,7 +78,7 @@ Script de instalación automatizada para Arch Linux con el entorno gráfico **Hy
 
 ## 🧠 Créditos
 
-Basado en el proyecto de [KrakenEU](https://github.com/KrakenEU/Arch-AutoBspwm).
+Basado en el proyecto de [KrakenEU](https://github.com/KrakenEU/Arch-AutoBspwm).  
 Adaptado, mantenido y mejorado por [@SamBleed](https://github.com/SamBleed).
 
 ---
@@ -76,15 +86,3 @@ Adaptado, mantenido y mejorado por [@SamBleed](https://github.com/SamBleed).
 ## 📜 Licencia
 
 Este proyecto está bajo la [licencia MIT](LICENSE). Puedes usarlo, modificarlo y compartirlo libremente.
-
-````
-
----
-
-### 📌 ¿Cómo aplicarlo?
-
-1. Abre el archivo:
-
-```bash
-nano README.md
-````
